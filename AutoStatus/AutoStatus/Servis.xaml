@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoStatus.Servis"
+             BackgroundImageSource="kalkpoz2"
+             NavigationPage.HasNavigationBar="false">
+
+    <StackLayout >
+        <Frame Padding="10,10,10,10"  BackgroundColor="DeepSkyBlue" HeightRequest="50">
+            <Label Text="Servisi" 
+                FontAttributes="Bold" VerticalOptions="Center"  TextColor="White" FontSize="25" HorizontalTextAlignment="Center"/>
+        </Frame>
+        <Label Padding="10,10,0,0" Text="Dostupni servisi:" TextColor="Black" FontSize="18" FontAttributes="Bold" />
+        <Frame Margin="20,20,20,0" CornerRadius="20">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"  />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="simanic" HeightRequest="60" WidthRequest="60" />
+                <Label Grid.Column="1" Text="AutoServis Simanić" VerticalOptions="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" />
+            </Grid>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Pritisnuto" />
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Frame Margin="20,10,20,0" CornerRadius="20">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"  />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="zgodic" HeightRequest="60" WidthRequest="60" />
+                <Label Grid.Column="1" Text="AutoServis Zgodić" VerticalOptions="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" />
+            </Grid>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Pritisnuto1" />
+            </Frame.GestureRecognizers>
+        </Frame >
+        <Frame Margin="20,10,20,0" CornerRadius="20">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"  />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="midas" HeightRequest="60" WidthRequest="60" />
+                <Label Grid.Column="1" Text="AutoServis Midas" VerticalOptions="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" />
+            </Grid>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Pritisnuto2" />
+            </Frame.GestureRecognizers>
+        </Frame >
+        <Button x:Name="Dugme" TranslationY="200" Margin="30,0,30,0" Text="Nazad" CornerRadius="10" BackgroundColor="Gold" BorderColor="Black" BorderWidth="2"  Clicked="Dugme_Clicked" />
+    </StackLayout>
+
+</ContentPage>

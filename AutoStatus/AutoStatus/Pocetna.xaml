@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoStatus.Pocetna"
+             BackgroundImage="pocetna.jpg"
+              NavigationPage.HasNavigationBar="False">
+
+    <Grid Margin="30,50,30,80">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="370" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="AutoStatus" HorizontalOptions="Center" FontAttributes="Italic,Bold"  TextColor="White" FontSize="50"/>
+        <Label Grid.Row="1" TranslationY="10" Text='Dobrodošli u aplikaciju "AutoStatus". Korištenjem ove aplikacije imate mogućnost pregleda svih servisnih podataka kroz historiju vozila, pregled dostupnih autoservisa i cjenovnik istih!' TextColor="AliceBlue" FontSize="17" FontAttributes="Italic" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+        <Button Grid.Row="1" BackgroundColor="Gold" Text="Nastavi" FontSize="18" FontAttributes="Italic,Bold" BorderColor="LightSkyBlue" BorderWidth="2" CornerRadius="20" VerticalOptions="End" HorizontalOptions="Center" Clicked="Button_Clicked" ></Button>
+    </Grid>
+
+</ContentPage>

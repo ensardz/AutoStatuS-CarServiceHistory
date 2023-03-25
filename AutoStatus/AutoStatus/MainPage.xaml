@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoStatus.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImage="meni">
+
+
+    <StackLayout>
+        <Frame Margin="0,0,0,40" Padding="10,10,10,10"  BackgroundColor="DeepSkyBlue" HeightRequest="50">
+            <Label Text="MENI" BackgroundColor="DeepSkyBlue"
+                FontAttributes="Bold" VerticalOptions="Center"  TextColor="White" FontSize="30" HorizontalTextAlignment="Center"/>
+        </Frame>
+        <Label  Text="Odaberite jednu od opcija!"
+                FontAttributes="Bold,Italic"  TextColor="Gold" FontSize="19" HorizontalTextAlignment="Center"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition   />
+                <RowDefinition   />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <ImageButton Margin="0,30,0,30" Grid.Row="0" Source="historija.jpg" CornerRadius="10" HeightRequest="90" HorizontalOptions="Center" Clicked="ImageButton_Clicked" />
+            <Label Grid.Row="0"  Text="Historija vozila"
+                VerticalOptions="End" FontAttributes="Bold"
+                    HorizontalOptions="Center" TextColor="White" FontSize="18" />
+
+            <ImageButton Margin="0,30,0,30" Grid.Row="1" Source="autoservis.jpg" CornerRadius="10" HeightRequest="90" HorizontalOptions="Center" Clicked="ImageButton_Clicked_1" />
+            <Label Grid.Row="1"  Text="Katalog servisa"
+                VerticalOptions="End" HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center" TextColor="White" FontSize="18" FontAttributes="Bold"  />
+
+            <ImageButton Margin="0,30,0,30" Grid.Row="2" Source="kalkulator.jpg" CornerRadius="10"  HeightRequest="90"  HorizontalOptions="Center" Clicked="ImageButton_Clicked_2"/>
+            <Label Grid.Row="2"  Text="Kalkulator servisa"
+                VerticalOptions="End" 
+                    HorizontalOptions="Center" TextColor="White" FontSize="18" FontAttributes="Bold" />
+
+
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>

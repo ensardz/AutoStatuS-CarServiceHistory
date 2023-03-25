@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoStatus.Historija2"
+             NavigationPage.HasNavigationBar="False" >
+
+    <StackLayout BackgroundColor="LightBlue">
+        <Frame Padding="10,20,20,10"  BackgroundColor="DeepSkyBlue" HeightRequest="50" >
+            <StackLayout>
+                <Grid VerticalOptions="Center" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Row="0" Grid.Column="0" Source="nazad.png" BackgroundColor="Transparent" Clicked="Nazad" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="Golf 6" 
+                FontAttributes="Bold" TranslationX="10"  TextColor="White" FontSize="20" VerticalTextAlignment="Center" />
+                </Grid>
+            </StackLayout>
+        </Frame>
+        <ScrollView>
+            <StackLayout >
+                <Grid Margin="50,0,50,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Osnovni podaci:" Grid.Row="0" Margin="0,0,0,20" HorizontalOptions="Center" TranslationY="15" TextColor="Black" FontSize="16" FontAttributes="Bold" ></Label>
+                    <ListView  ItemsSource="{Binding Historija}" 
+                  Grid.Row="1" SelectionMode="None" IsEnabled="False" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate >
+                                <ViewCell>
+                                    <Frame BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" >
+                                        <Grid HeightRequest="90" >
+                                            <Label  Grid.Row="0" Text="{Binding Info}"  TextColor="Black" FontSize="15" FontAttributes="Bold,Italic" VerticalTextAlignment="Center" />
+                                            <Label  Text="{Binding Podatak}" Grid.Column="1" TextColor="Black" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+                <Frame HasShadow="True" CornerRadius="10" Margin="20,-530,20,20" Padding="0" HeightRequest="300" BorderColor="LightBlue" >
+                    <StackLayout >
+                        <CarouselView x:Name="SlikeCarousel" IndicatorView="Indikator">
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Slika}" Aspect="Fill" />
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                        <IndicatorView BackgroundColor="Transparent" x:Name="Indikator" TranslationY="-3"  IndicatorColor="LightGray" SelectedIndicatorColor="Black" IndicatorSize="10" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+                <Frame Margin="40,0,40,0" HasShadow="True" BackgroundColor="Silver" CornerRadius="10" Padding="5" HeightRequest="100" BorderColor="Silver" >
+                    <StackLayout>
+                        <Label Text="Dostupni servisni podaci:" Margin="30,0,0,10" FontSize="17" TextColor="Black" FontAttributes="Bold"></Label>
+                        <Picker BackgroundColor="FloralWhite" Margin="30,0,30,0" FontSize="16" 
+                         FontAttributes="Bold,Italic" HorizontalTextAlignment="Center" x:Name="Piker" Title="Odaberite datum:" TitleColor="Black" SelectedIndexChanged="Piker_SelectedIndexChanged">
+                        </Picker>
+                    </StackLayout>
+                </Frame>
+                <Button x:Name="Dugme" Margin="30,40,30,40" Text="Nazad" CornerRadius="10" BackgroundColor="Gold" BorderColor="Black" BorderWidth="2" Clicked="Nazad" />
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>

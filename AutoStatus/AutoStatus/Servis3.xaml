@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pinch="clr-namespace:Xamarin.Forms.PinchZoomImage;assembly=Xamarin.Forms.PinchZoomImage"
+             x:Class="AutoStatus.Servis3"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="kalkpoz2">
+
+    <StackLayout>
+        <Frame Padding="10,20,20,10"  BackgroundColor="DeepSkyBlue" HeightRequest="50" >
+            <StackLayout>
+                <Grid VerticalOptions="Center" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Row="0" Grid.Column="0" Source="nazad.png" BackgroundColor="Transparent" Clicked="Nazad" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="AutoServis Midas" 
+                FontAttributes="Bold" TranslationX="10"  TextColor="White" FontSize="20" VerticalTextAlignment="Center" />
+                </Grid>
+            </StackLayout>
+        </Frame>
+        <ScrollView>
+            <StackLayout >
+                <Grid Margin="50,0,50,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Osnovni podaci:" Grid.Row="0" HorizontalOptions="Center" TranslationY="15" TextColor="Black" FontSize="15" FontAttributes="Bold" ></Label>
+                    <ListView  ItemsSource="{Binding Servisi}" 
+                  Grid.Row="1" SelectionMode="None" IsEnabled="False" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate >
+                                <ViewCell>
+                                    <Frame BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" >
+                                        <Grid HeightRequest="90">
+                                            <Label  Grid.Row="0" Text="{Binding Polja}"  TextColor="Black" FontSize="15" FontAttributes="Bold,Italic" VerticalTextAlignment="Center" />
+                                            <Label  Text="{Binding Vrijednost}" Grid.Column="1" TextColor="Black" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Button x:Name="Cjenovnik" Margin="45,0,45,0"  TranslationY="380" Text="Cjenovnik" CornerRadius="10" BackgroundColor="Gold" BorderColor="Black" BorderWidth="2" Clicked="Cjenovnikklik"  />
+                </Grid>
+                <Grid x:Name="Grid2" Margin="0,-440,0,0" IsVisible="False" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ListView  ItemsSource="{Binding Cijene}" 
+                  Grid.Row="0" SelectionMode="None" IsEnabled="False" Margin="10" >
+                        <ListView.ItemTemplate >
+                            <DataTemplate >
+                                <ViewCell>
+                                    <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" IsEnabled="False"  >
+                                        <Grid  >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="280" />
+                                                <ColumnDefinition Width="130" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0" >
+                                                <BoxView BackgroundColor="Black"/>
+                                                <Grid BackgroundColor="White" Margin="1" >
+                                                    <Label Grid.Column="0" Text="{Binding RBr}"  TextColor="Black" FontSize="15" FontAttributes="Bold,Italic" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                                </Grid>
+                                            </Grid>
+                                            <Grid  Grid.Column="1" TranslationX="-10" >
+                                                <BoxView BackgroundColor="Black"   />
+                                                <Grid BackgroundColor="White" Margin="1" >
+                                                    <Label   Text="{Binding Opis}" Grid.Column="1" TextColor="Black" FontSize="12" TranslationX="-140" FontAttributes="Bold"  VerticalTextAlignment="Center"  />
+                                                </Grid>
+                                            </Grid>
+                                            <Grid  Grid.Column="2" TranslationX="-20"  >
+                                                <BoxView BackgroundColor="Black"  />
+                                                <Grid BackgroundColor="White" Margin="1" >
+                                                    <Label  Text="{Binding Cijena}" Grid.Column="2" TextColor="Black"  FontSize="12" VerticalTextAlignment="Center" TranslationX="-70" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+                <StackLayout x:Name="Stack1" Margin="0,0,0,-450" TranslationY="-465">
+                    <pinch:PinchZoom x:Name="Zoom" TranslationY="25" >
+                        <pinch:PinchZoom.Content>
+                            <Image Margin="20"  Source="midasloc" ></Image>
+                        </pinch:PinchZoom.Content>
+                    </pinch:PinchZoom>
+                    <Button Margin="40,20,40,0"  Text="Pronađite najbližu rutu do servisa" CornerRadius="10" BackgroundColor="Gold" BorderColor="Black" BorderWidth="2" Clicked="Lokacija" ></Button>
+                    <Button x:Name="Dugme" Margin="30,40,30,0"  Text="Nazad" CornerRadius="10" BackgroundColor="Gold" BorderColor="Black" BorderWidth="2" Clicked="Nazad" IsVisible="False" ></Button>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
+
+

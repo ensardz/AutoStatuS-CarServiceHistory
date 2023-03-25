@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoStatus.Provjera"
+             BackgroundImage="pristupna.jpg"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+
+        <Frame Margin="0,0,0,80" Padding="10,10,10,10"  BackgroundColor="DeepSkyBlue" HeightRequest="50">
+            <Label Text="Historija sevisa" BackgroundColor="DeepSkyBlue"
+                FontAttributes="Bold" VerticalOptions="Center"  TextColor="White" FontSize="20" HorizontalTextAlignment="Center"/>
+        </Frame>
+        <Label TranslationX="40" Text="Provjera pristupa:" TextColor="Black" FontSize="15" FontAttributes="Bold" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition   />
+                <RowDefinition   />
+            </Grid.RowDefinitions>
+            <Entry Grid.Row="0" Margin="40,0,40,0"  x:Name="Ime" BackgroundColor="White" Placeholder="Unesite vaše ime:" />
+            <Entry Grid.Row="1" Margin="40,0,40,0" x:Name="Unos" BackgroundColor="White"  Placeholder="Unesite identifikacioni ključ:" IsPassword="True" />
+            <ImageButton HeightRequest="40"  Grid.Row="1"  Source="pass.png" HorizontalOptions="End" Pressed="ImageButton_Pressed" Released="ImageButton_Released" />
+        </Grid>
+        <Button HorizontalOptions="Center" Text="Potvrdi unos" CornerRadius="10" BackgroundColor="Gold"  BorderWidth="2" BorderColor="Black" Clicked="Button_Clicked" />
+
+        <Button TranslationY="320" Margin="30,0,30,0" Text="Nazad" CornerRadius="10" BackgroundColor="Gold" BorderWidth="2" BorderColor="Black" Clicked="Nazad1"/>
+
+    </StackLayout>
+
+</ContentPage>
