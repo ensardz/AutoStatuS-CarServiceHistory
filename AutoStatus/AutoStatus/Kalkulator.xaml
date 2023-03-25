@@ -29,7 +29,7 @@
                     <Button HorizontalOptions="Center" Text="Izračunaj" CornerRadius="10" BackgroundColor="Gold" BorderColor="Black" BorderWidth="2" Clicked="Drugi" BindingContext="{x:Reference Name=rez2 }"  />
                 </StackLayout>
             </Frame>
-            <Button x:Name="Dugme" Margin="30,80,30,0" Text="Nazad" CornerRadius="10" BackgroundColor="Gold" BorderColor="Black" BorderWidth="2" Clicked="Nazad" />
+            <Button x:Name="Dugme" Margin="30,80,30,0" Text="Nazad" CornerRadius="10" BackgroundColor="Gold" BorderColor="Silver" BorderWidth="2" Clicked="Nazad" />
 
         </StackLayout>
     </ContentPage.Content>
